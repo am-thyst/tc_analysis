@@ -14,6 +14,7 @@ def hrs_since_init(year_0,month_0,day_0,hr_0,year_1,month_1,day_1,hr_1):
 def CFL(ws,ts=120,res=4400,Iris=False):
     # Calculates CFL number. > 1 indicates smaller ts needed.
     # Can be used on xarray, numpy array, iris, int or float
+    # Units must be in m or s (or ms)
     if iris == False:
         cfl = ws * (ts / res)
     if Iris == True:
