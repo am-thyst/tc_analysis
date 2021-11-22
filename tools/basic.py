@@ -21,3 +21,10 @@ def CFL(ws,ts=120,res=4400,Iris=False):
         tr = ts / res
         cfl = iris.analysis.maths.multiply(ws,tr)    
     return(cfl)
+
+def add_colorbar(axes,im1,ticks,extend='neither'):
+    divider = make_axes_locatable(axes)
+    cax = divider.append_axes('right', size='5%', pad=0.05)
+    cbar = fig.colorbar(im1, cax=cax, orientation='vertical',ticks=ticks,extend=extend)
+    cbar.ax.set_yticklabels(ticks)
+    cbar.ax.tick_params(labelsize=15)
