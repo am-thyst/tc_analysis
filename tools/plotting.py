@@ -10,6 +10,13 @@ def rem_ax(ax):
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])
 
+def add_colorbar(axes,im1,ticks,extend='neither'):
+    divider = make_axes_locatable(axes)
+    cax = divider.append_axes('right', size='5%', pad=0.05)
+    cbar = fig.colorbar(im1, cax=cax, orientation='vertical',ticks=ticks,extend=extend)
+    cbar.ax.set_yticklabels(ticks)
+    cbar.ax.tick_params(labelsize=15)
+
 def map_formatter(ax,tick_base_x=15.0, tick_base_y=15.0, labelsize=15,top_label=False, bottom_label=True, right_label=False,left_label=True,central_longitude=0.0,res='10m'):
     gl = ax.gridlines(crs=ccrs.PlateCarree(), draw_labels=True,linewidth=0.75, color='gray',linestyle=":")
     gl.xlabels_top = top_label
