@@ -1,7 +1,7 @@
 from datetime import datetime
 import iris
 
-def hrs_since_init(year_0,month_0,day_0,hr_0,year_1,month_1,day_1,hr_1):
+def hrs_since_init(month_0,day_0,hr_0,month_0=9,day_0=22,hr_0=0,year_0=2017,year_1=2017):
     # Calculates time since model initialisation in hrs
     # format is dd/mm/yyyy hh
     start = str(day_0) + '/' + str(month_0) + '/' + str(year_0) + ' ' +str(hr_0) +':00'
